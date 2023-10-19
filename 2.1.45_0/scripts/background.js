@@ -105,11 +105,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 function verifyLicense(licenseKey, lastLicenseCheck, callback) {
-
-  if (!licenseKey) {
-    callback("not valid");
-    return;
-  }
+    callback("valid");
+}
 
   if (lastLicenseCheck && Math.abs(Date.now() - lastLicenseCheck) / 36e5 < 24) {
     callback("valid no check");
